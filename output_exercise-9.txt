@@ -1,0 +1,102 @@
+
+sandeep@sandeep MINGW64 ~/Desktop/git_assignment/exercise-9 (main)
+$ vi index.html
+
+sandeep@sandeep MINGW64 ~/Desktop/git_assignment/exercise-9 (main)
+$ git add index.html
+
+sandeep@sandeep MINGW64 ~/Desktop/git_assignment/exercise-9 (main)
+$ git commit -m"commit to index.html from main branch"
+[main b088485] commit to index.html from main branch
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+sandeep@sandeep MINGW64 ~/Desktop/git_assignment/exercise-9 (main)
+$ git merge my-feature
+Auto-merging index.html
+CONFLICT (content): Merge conflict in index.html
+Automatic merge failed; fix conflicts and then commit the result.
+
+sandeep@sandeep MINGW64 ~/Desktop/git_assignment/exercise-9 (main|MERGING)
+$ vi index.html
+
+sandeep@sandeep MINGW64 ~/Desktop/git_assignment/exercise-9 (main|MERGING)
+$ git merge my-feature
+error: Merging is not possible because you have unmerged files.
+hint: Fix them up in the work tree, and then use 'git add/rm <file>'
+hint: as appropriate to mark resolution and make a commit.
+fatal: Exiting because of an unresolved conflict.
+
+sandeep@sandeep MINGW64 ~/Desktop/git_assignment/exercise-9 (main|MERGING)
+$ vi index.html
+
+sandeep@sandeep MINGW64 ~/Desktop/git_assignment/exercise-9 (main|MERGING)
+$ git merge my-feature
+error: Merging is not possible because you have unmerged files.
+hint: Fix them up in the work tree, and then use 'git add/rm <file>'
+hint: as appropriate to mark resolution and make a commit.
+fatal: Exiting because of an unresolved conflict.
+
+sandeep@sandeep MINGW64 ~/Desktop/git_assignment/exercise-9 (main|MERGING)
+$ git checkout main
+error: you need to resolve your current index first
+index.html: needs merge
+
+sandeep@sandeep MINGW64 ~/Desktop/git_assignment/exercise-9 (main|MERGING)
+$ vi index.html
+
+[1]+  Stopped                 vi index.html
+
+sandeep@sandeep MINGW64 ~/Desktop/git_assignment/exercise-9 (main|MERGING)
+$ git merge my-feature
+error: Merging is not possible because you have unmerged files.
+hint: Fix them up in the work tree, and then use 'git add/rm <file>'
+hint: as appropriate to mark resolution and make a commit.
+fatal: Exiting because of an unresolved conflict.
+
+sandeep@sandeep MINGW64 ~/Desktop/git_assignment/exercise-9 (main|MERGING)
+$ git add .
+
+sandeep@sandeep MINGW64 ~/Desktop/git_assignment/exercise-9 (main|MERGING)
+$ git commit -m"made changes to resolve conflict"
+[main 9bc9ffe] made changes to resolve conflict
+
+sandeep@sandeep MINGW64 ~/Desktop/git_assignment/exercise-9 (main)
+$ git merge my-feature
+Already up to date.
+
+sandeep@sandeep MINGW64 ~/Desktop/git_assignment/exercise-9 (main)
+$ git checkout my-feature
+error: Your local changes to the following files would be overwritten by checkout:
+        .index.html.swp
+Please commit your changes or stash them before you switch branches.
+Aborting
+
+sandeep@sandeep MINGW64 ~/Desktop/git_assignment/exercise-9 (main)
+$ git status
+On branch main
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   .index.html.swp
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+sandeep@sandeep MINGW64 ~/Desktop/git_assignment/exercise-9 (main)
+$ git add .
+
+sandeep@sandeep MINGW64 ~/Desktop/git_assignment/exercise-9 (main)
+$ git commit -m"commit changes"
+[main 98801fe] commit changes
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+sandeep@sandeep MINGW64 ~/Desktop/git_assignment/exercise-9 (main)
+$ git status
+On branch main
+nothing to commit, working tree clean
+
+sandeep@sandeep MINGW64 ~/Desktop/git_assignment/exercise-9 (main)
+$ git checkout my-feature
+Switched to branch 'my-feature'
+
+sandeep@sandeep MINGW64 ~/Desktop/git_assignment/exercise-9 (my-feature)
+
